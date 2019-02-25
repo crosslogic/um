@@ -105,3 +105,18 @@ func TestConvertir(t *testing.T) {
 	assert.Nil(t, err)
 	assert.InDelta(t, 2., out, 0.0000000001)
 }
+
+func TestMedidasDe(t *testing.T) {
+
+	{
+		mm, err := MedidasDe("Cantidad")
+		assert.Nil(t, err)
+		assert.Len(t, mm, 1)
+	}
+	{
+		mm, err := MedidasDe("Peso")
+		assert.Nil(t, err)
+		assert.Len(t, mm, 4)
+	}
+
+}

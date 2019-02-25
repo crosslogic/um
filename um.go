@@ -211,7 +211,12 @@ func (u UM) Validar() error {
 }
 
 // MedidasDe devuelve las unidades de medida de "Peso" por ejemplo.
-func MedidasDe(tipoMedida TipoMedida) (medidas []UM, err error) {
+func MedidasDe(tipoMedida string) (medidas []UM, err error) {
+	for _, v := range unidades {
+		if v.Tipo == tipoMedida {
+			medidas = append(medidas, v)
+		}
+	}
 	return
 }
 
